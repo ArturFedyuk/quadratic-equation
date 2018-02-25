@@ -1,9 +1,14 @@
 module.exports = function solveEquation(equation) {
-    result = [];
-    equation = equation
-  
-    result[0] = Math.round((-equation[1] + D ** 0.5) / (2 * equation[0]));
-    result[1] = Math.round((-equation[1] - D ** 0.5) / (2 * equation[0]));
+  equation = equation.replace(/\s/g,'');
+  arr = equation.split('x');
 
-    return result.sort((a,b) => a - b)
-};
+  A = Int(arr[0]),
+  B = Int(arr[1].slice(2)),
+  C = Int(arr[2]);
+
+  D = Math.pow(B,2) - 4*A*C,
+  X1 = Math.round((-B + Math.sqrt(D)) / (2 * A)),
+  X2 = Math.round((-B - Math.sqrt(D)) / (2 * A));
+
+  return [X1, X2].sort( (a,b) => a - b );
+}
