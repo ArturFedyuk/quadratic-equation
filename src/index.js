@@ -1,5 +1,5 @@
 module.exports = function solveEquation(equation) {
-  //equation = equation.replace(/\s/g,'');
+  equation = equation.replace(/\s/g,'');
   arr = equation.split('x');
 
   const A = parseInt(arr[0]),
